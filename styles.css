@@ -670,6 +670,40 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 28px 120px; }
   .flow-row { grid-template-columns: 1fr; }
   .flow-arrow { transform: rotate(90deg); padding: 8px 0; }
   .detail-body-inner { padding-left: 22px; }
+   .tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.tab-btn {
+  justify-content: center;
+}
+
+.detail-head {
+  flex-wrap: wrap;
+}
+   
+.detail-head .d-title {
+  white-space: normal;
+  word-break: keep-all;
+}
+   
+.detail-head .d-sub {
+  display: none;
+}
+
+.contact-row {
+  flex-direction: column;
+}
+
+.contact-link {
+  width: 100%;
+}
+
+.flow-cell {
+  padding: 16px;
+}
 }
 @media (max-width: 560px) {
   .strengths { grid-template-columns: 1fr; }
