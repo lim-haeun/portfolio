@@ -182,6 +182,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           발표자료
         </a>
+        <a class="proj-link" href="https://chunbae-tour-api.netlify.app/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+          API 명세서
+        </a>
       </div>
       <div class="domain-line">
         <div class="dl-label">담당 도메인 · 주도 설계·구현</div>
@@ -623,7 +627,7 @@ MessageListenerAdapter adapter(...) {
           <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
           <div class="flow-cell solution"><span class="stage"><span class="ic"></span>Solution</span><span class="body">BCrypt 호출 전 null·공백(<code style="font-family:var(--mono);font-size:12px;background:var(--navy-950);padding:1px 6px;border-radius:4px;color:var(--amber-soft)">trim().isEmpty()</code>) 가드 클로즈 추가, <code style="font-family:var(--mono);font-size:12px;background:var(--navy-950);padding:1px 6px;border-radius:4px;color:var(--amber-soft)">INVALID_CURRENT_PASSWORD</code> 예외로 즉시 차단</span></div>
           <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="flow-cell result"><span class="stage"><span class="ic"></span>Result</span><span class="body">입력값 우회 가능성 제거, 불필요한 BCrypt 연산 차단</span></div>
+          <div class="flow-cell result"><span class="stage"><span class="ic"></span>Result</span><span class="body">빈 문자열의 BCrypt 도달 경로 차단, 불필요한 연산 제거</span></div>
         </div>
       </div>
       <div class="detail-list" style="margin-top:16px">
