@@ -4,6 +4,19 @@
 (function () {
   "use strict";
 
+  /* ---------- THEME TOGGLE (light default / dark) ---------- */
+  let darkMode = document.documentElement.getAttribute("data-theme") === "dark";
+  (function () {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      darkMode = !darkMode;
+      if (darkMode) document.documentElement.setAttribute("data-theme", "dark");
+      else document.documentElement.removeAttribute("data-theme");
+      try { localStorage.setItem("portfolio-theme", darkMode ? "dark" : "light"); } catch (e) {}
+    });
+  })();
+
   /* ---------- TAB NAVIGATION ---------- */
   const tabBtns = Array.from(document.querySelectorAll(".tab-btn"));
   const panels = Array.from(document.querySelectorAll(".panel"));
@@ -157,8 +170,10 @@
           const dd = Math.hypot(a.x - b.x, a.y - b.y);
           if (dd < 92) {
             const sa = Math.min(depth(a.x), depth(b.x));
-            const op = (1 - dd / 92) * 0.045 * sa;
-            ctx.strokeStyle = `rgba(173,196,228,${op})`;
+            const op = (1 - dd / 92) * (darkMode ? 0.045 : 0.06) * sa;
+            ctx.strokeStyle = darkMode
+              ? `rgba(173,196,228,${op})`
+              : `rgba(70,95,135,${op})`;
             ctx.lineWidth = 0.55;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
           }
@@ -171,8 +186,8 @@
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
         ctx.fillStyle = d.warm
-          ? `rgba(245,179,80,${0.34 * sa})`
-          : `rgba(196,212,235,${0.28 * sa})`;
+          ? (darkMode ? `rgba(245,179,80,${0.34 * sa})` : `rgba(217,119,6,${0.40 * sa})`)
+          : (darkMode ? `rgba(196,212,235,${0.28 * sa})` : `rgba(70,95,135,${0.34 * sa})`);
         ctx.fill();
       });
 
