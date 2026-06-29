@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/png" href="favicon.png" />
 <title>임하은 · Backend Engineer 포트폴리오</title>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="임하은 | Spring Boot 백엔드 개발자" />
-<meta property="og:description"
-      content="Redis 기반 실시간 시스템과 동시성 문제 해결에 관심이 많은 Spring Boot 백엔드 개발자" />
-<meta property="og:url"
-      content="https://lim-haeun.netlify.app" />
-<link rel="stylesheet" href="styles.css?v=14" />
+<link rel="stylesheet" href="styles.css?v=15" />
+<script>
+  /* apply saved theme before paint to avoid flash; light is default */
+  (function () {
+    try {
+      var t = localStorage.getItem("portfolio-theme");
+      if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
@@ -19,7 +21,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand">
-      <span class="logo-mark">HE</span>
+      <span class="logo-mark logo-img"><img src="uploads/이력서-Photoroom.png" alt="임하은" /></span>
       <span>
         <span class="brand-name">임하은</span><br />
         <span class="brand-role">Backend Engineer · Java / Spring Boot</span>
@@ -27,10 +29,14 @@
     </div>
     <nav class="tabs">
       <button class="tab-btn active" data-tab="profile"><span class="tab-num">01</span> Profile</button>
-      <button class="tab-btn" data-tab="chunbae"><span class="tab-num">02</span> 춘배투어</button>
+      <button class="tab-btn" data-tab="chunbae"><span class="tab-num">02</span> Main Projects</button>
       <button class="tab-btn" data-tab="projects"><span class="tab-num">03</span> Projects</button>
       <button class="tab-btn" data-tab="more"><span class="tab-num">04</span> Blog &amp; More</button>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+      <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
   </div>
 </header>
 
@@ -88,27 +94,29 @@
     <div class="card about-card reveal" data-tilt>
       <h3><span class="em">🧩</span> 어떤 개발자인가</h3>
       <p>
-        실시간 시스템과 동시성 문제 해결에 관심이 많은 백엔드 개발자입니다.
-        <span class="k">Redis Pub/Sub 기반 채팅 시스템</span>, <span class="k">Redisson 분산 락</span>,
+        호텔외식조리과를 전공하고 요리대회 대상을 수상한 경험이 있지만, 코드가 실제로 동작하는 순간의 재미에 이끌려 백엔드 개발자로 전향했습니다.
+      </p>
+      <p>
+        실시간 시스템과 동시성 문제 해결에 관심이 많은 백엔드 개발자입니다. <span class="k">Redis Pub/Sub 기반 채팅 시스템</span>, <span class="k">Redisson 분산 락</span>,
         이벤트 기반 알림 시스템을 구현하며 문제의 원인을 분석하고 해결하는 과정에서 즐거움을 느낍니다.
-        라이브러리 사용에 그치지 않고 <span class="k">spring-data-redis 내부 동작</span>까지 추적하며
-        원인을 분석했던 경험처럼, 기술을 깊이 이해하고 근본적인 해결책을 찾기 위해 노력합니다.
+      </p>
+      <p>
+        프로젝트를 진행하며 문제 상황을 재현하고, 로그와 실행 결과를 바탕으로 원인을 분석한 뒤 해결 과정을 검증하는 것을 중요하게 생각합니다. 또한 배운 내용과 기술에 대한 고민을 <span class="k">블로그에 기록</span>하며, 지식을 정리하고 공유하는 습관을 가지고 있습니다.
       </p>
     </div>
     <div class="card about-card reveal" data-tilt>
       <h3><span class="em">🤝</span> 팀 리더 · 협업</h3>
       <p>
-        첫 팀 프로젝트에서는 일정 관리와 팀 조율의 어려움을 크게 느꼈습니다.
-        이러한 부족함을 개선하기 위해 최종 프로젝트인 <span class="k">춘배투어</span>에서 다시 팀 리더를 맡았습니다.
-        <span class="k">MVP와 고도화 범위를 구분</span>해 일정 리스크를 줄이고,
-        데일리 스크럼 · Jira · Notion 관리와 튜터 커뮤니케이션을 직접 담당하며 프로젝트를 완주했습니다.
-        또한 PR 담당 리뷰어를 지정하고 리뷰 프로세스를 개선하여 <span class="k">리뷰 병목</span>을 줄였으며,
-        팀원들이 서로의 설계 의도와 도메인 이해를 공유할 수 있는 협업 문화를 만들기 위해 노력했습니다.
+        처음 진행한 팀 프로젝트에서 일정 관리와 팀 조율의 어려움을 느꼈고, 그 아쉬움을 개선하기 위해 최종 프로젝트인 <span class="k">춘배투어</span>에서 다시 팀 리더를 맡았습니다.
+        춘배투어를 진행하며, <span class="k">MVP와 고도화 범위를 구분</span>해 일정 리스크를 줄이고,
+        데일리 스크럼 · Jira · Notion 관리와 튜터 커뮤니케이션을 직접 담당하며 프로젝트를 완료했습니다.
+        PR 담당 리뷰어를 지정하고 <span class="k">CodeRabbit 자동 리뷰</span>와 Claude · Codex를 활용한 팀원 직접 리뷰를 병행하는 프로세스를 구축해 <span class="k">리뷰 병목</span>을 줄이고 도메인 간 지식 공유 문화를 만들었습니다.
+        Flyway 도입 후 순번 기반 버전(1, 2, 3...)이 PR 과정에서 충돌을 유발할 수 있음을 인지하고, <span class="k">날짜 기반 버전(YYYYMMDD)</span> 방식으로 전환하여 팀 전체의 마이그레이션 관리 기준을 정립했습니다.
       </p>
       <div class="role-tags">
         <span class="role-tag lead">팀 리더 · 춘배투어</span>
         <span class="role-tag">팀 리더 · Commerce</span>
-        <span class="role-tag">부리더 · 반려견 이커머스</span>
+        <span class="role-tag">부리더 · 견생보감</span>
         <span class="role-tag">팀원 · 티켓 JAVA라</span>
       </div>
     </div>
@@ -139,8 +147,8 @@
   </div>
 </section>
 
-<!-- ============ 02 · 춘배투어 ============ -->
-<section class="panel" id="chunbae" data-screen-label="02 춘배투어">
+<!-- ============ 02 · Main Projects ============ -->
+<section class="panel" id="chunbae" data-screen-label="02 Main Projects">
   <div class="proj-hero reveal" style="margin-top:48px">
     <div class="proj-hero-body">
       <span class="proj-badge">🌟 대표 프로젝트 · MAIN PROJECT</span>
@@ -160,6 +168,10 @@
         <a class="proj-link" href="https://www.notion.so/3757a2665e47803ba27ef823bf860e89" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
           프로젝트 브로셔
+        </a>
+        <a class="proj-link" href="https://canva.link/8l77xn9mol2h8bu" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          발표자료
         </a>
       </div>
       <div class="domain-line">
@@ -209,7 +221,7 @@
           <div class="tl-step"><div class="tl-dot">2</div><div class="tl-body"><div class="t">STOMP 발행 직전 로그 분석</div><div class="d"><code>channel</code> 값이 실제 채널이 아닌 <b>패턴 문자열</b>임을 발견</div></div></div>
           <div class="tl-step"><div class="tl-dot">3</div><div class="tl-body"><div class="t">spring-data-redis 이슈 트래커 조사</div><div class="d">유사 사례와 라이브러리 내부 동작 가설 수립</div></div></div>
           <div class="tl-step"><div class="tl-dot">4</div><div class="tl-body"><div class="t">MessageListenerAdapter 위임 구조 소스코드 분석</div><div class="d">어댑터가 PatternTopic 패턴 문자열을 channel 인자로 전달함을 확인</div></div></div>
-          <div class="tl-step"><div class="tl-dot">5</div><div class="tl-body"><div class="t">실제 채널은 <code>Message.getChannel()</code>에만 존재</div><div class="d">원인 특정: 어댑터를 거치면 실채널 정보가 소실됨</div></div></div>
+          <div class="tl-step"><div class="tl-dot">5</div><div class="tl-body"><div class="t">전달 경로 문제 — 소실이 아닌 어댑터의 의도적 무시</div><div class="d"><code>onMessage(message, pattern)</code> 시점엔 <code>message.getChannel()</code>에 실채널 정상 보유. 그러나 <code>MessageListenerAdapter</code>가 이를 읽지 않고 2번째 인자 <code>pattern</code>을 deserialize해 <code>handleMessage(body, channel)</code>에 채워 넘김 — Spring <a href="https://github.com/spring-projects/spring-data-redis/issues/3338" target="_blank" rel="noopener" style="color:var(--amber-soft)">GitHub #3338</a> CLOSED / 의도된 설계</div></div></div>
         </div>
       </div>
 
@@ -218,8 +230,10 @@
         <p>
           <code>MessageListenerAdapter</code>가 PatternTopic 구독을 위임할 때, 콜백의 <code>channel</code> 인자로
           <b>실제 채널(<code>chat:123</code>)이 아닌 구독 패턴(<code>chat:*</code>)을 전달</b>합니다.
-          실제 발행 채널 정보는 <code>Message.getChannel()</code>에만 담겨 있어,
-          어댑터 위임 구조를 거치는 순간 소실되는 것이 근본 원인이었습니다.
+          <code>message.getChannel()</code>에는 실제 채널이 정상적으로 담겨 있지만,
+          <code>MessageListenerAdapter</code>가 이를 읽지 않고 두 번째 인자(<code>pattern</code>)를 deserialize해
+          <code>handleMessage(body, channel)</code>의 channel 자리에 채워 넘기는 것이 근본 원인입니다.
+          이는 버그가 아닌 <b>Spring 공식 설계</b>(<a href="https://github.com/spring-projects/spring-data-redis/issues/3338" target="_blank" rel="noopener" style="color:var(--amber-soft)">GitHub #3338</a> CLOSED)로, 바이트코드 레벨까지 재검증해 확인했습니다.
         </p>
       </div>
 
@@ -406,7 +420,7 @@ MessageListenerAdapter adapter(...) {
         <div class="dc-head"><span class="dc-key">KAN-296</span><h4>동행 참여 제한 정책 전환</h4></div>
         <div class="dc-desc">
           <span class="k">기존</span> "동시 ONGOING 동행 2개까지" 개수 제한 → 기간이 겹치지 않는 여러 동행을 미리 계획한 정상 사용자까지 차단되는 문제를 인식.
-          <span class="k">전환</span> Companion에 tripStartDate/tripEndDate 추가, 기간 겹침(<code>start &lt;= other.end AND end &gt;= other.start</code>) 시 거부로 교체하고 개수 상태를 완전 제거했습니다.
+          <span class="k">전환</span> Companion에 tripStartDate/tripEndDate 추가, 기간 겹침(<code>!tripStartDate.isAfter(p.getTripEndDate()) &amp;&amp; !tripEndDate.isBefore(p.getTripStartDate())</code>) 시 거부로 교체하고 개수 상태를 완전 제거했습니다.
           표면 요구사항("동시 참여 제한")이 실제로 막으려는 것(<span class="k">기간 충돌</span>)을 한 단계 더 파고들어 재설계했습니다.
         </div>
       </div>
@@ -421,14 +435,66 @@ MessageListenerAdapter adapter(...) {
   <div class="block">
     <div class="block-head"><div class="section-tag">Performance</div><h3 class="section-title" style="font-size:clamp(22px,3vw,30px)">성능 개선 실측</h3></div>
     <div class="perf reveal">
-      <div class="perf-nums">
-        <div class="pn before"><div class="big">400</div><div class="lbl">examined rows</div></div>
-        <div class="arrow-big">→</div>
-        <div class="pn after"><div class="big">20</div><div class="lbl">examined rows</div></div>
+      <div class="perf-rings">
+        <!-- Ring 1: Examined rows reduction -->
+        <div class="perf-ring-card">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 130 130" class="ring-svg" aria-hidden="true">
+              <circle class="ring-track" cx="65" cy="65" r="54"/>
+              <circle class="ring-progress ring-green" cx="65" cy="65" r="54" style="--ring-fill:322.3"/>
+            </svg>
+            <div class="ring-inner">
+              <span class="ring-big" style="color:var(--green)">−95%</span>
+              <span class="ring-sub">rows 감소</span>
+            </div>
+          </div>
+          <div class="ring-meta">
+            <div class="ring-title">오버스캔 제거</div>
+            <div class="ring-nums">
+              <span class="rn-bad">400</span>
+              <span class="rn-arr">→</span>
+              <span class="rn-good">20</span>
+              <span class="rn-unit">rows</span>
+            </div>
+            <div class="ring-detail">복합 인덱스 (chat_room_id, id)<br/>EXPLAIN ANALYZE 실측</div>
+          </div>
+        </div>
+        <!-- Ring 2: Response time improvement -->
+        <div class="perf-ring-card">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 130 130" class="ring-svg" aria-hidden="true">
+              <circle class="ring-track" cx="65" cy="65" r="54"/>
+              <circle class="ring-progress ring-amber" cx="65" cy="65" r="54" style="--ring-fill:271.4"/>
+            </svg>
+            <div class="ring-inner">
+              <span class="ring-big" style="color:var(--amber-soft)">4~5×</span>
+              <span class="ring-sub">faster</span>
+            </div>
+          </div>
+          <div class="ring-meta">
+            <div class="ring-title">응답시간 단축</div>
+            <div class="ring-nums">
+              <span class="rn-bad">Before</span>
+              <span class="rn-arr">→</span>
+              <span class="rn-good amber">4~5배</span>
+            </div>
+            <div class="ring-detail">동일 캐시 조건 실측</div>
+          </div>
+        </div>
       </div>
-      <div class="perf-text">
-        <div class="pt-gain">실측 응답시간 약 4~5× 개선</div>
-        <div class="pt-desc">messages 테이블 chatRoomId 조회 시 인덱스 부재로 오버스캔 → 복합 인덱스 <code>(chat_room_id, id)</code> 추가. <code>EXPLAIN ANALYZE</code> (Docker MySQL 8.4, 더미 10만 건 · 20개 방 × 5,000건) 기준 examined rows 400→20으로 오버스캔을 제거했고, 동일한 캐시 조건에서 실측 응답시간을 약 4~5배 개선했다.</div>
+      <div class="perf-body">
+        <div class="perf-headline">실측 응답시간 약 4~5배 개선</div>
+        <div class="perf-sentences">
+          <div class="perf-sentence">messages 테이블의 chatRoomId 조회 시 인덱스 부재로 오버스캔이 발생했다.</div>
+          <div class="perf-sentence">복합 인덱스 <code>(chat_room_id, id)</code>를 추가해 <code>EXPLAIN ANALYZE</code> 기준 examined rows를 400→20으로 감소시켰다.</div>
+          <div class="perf-sentence">동일한 캐시 조건에서 응답시간도 약 4~5배 단축됐다.</div>
+        </div>
+        <div class="perf-env">
+          <span class="perf-env-label">측정 환경</span>
+          <span class="perf-env-badge">Docker MySQL 8.4</span>
+          <span class="perf-env-badge">데이터 10만 건</span>
+          <span class="perf-env-badge">20개 방 × 5,000건</span>
+        </div>
       </div>
     </div>
   </div>
@@ -540,23 +606,22 @@ MessageListenerAdapter adapter(...) {
       </div>
       <div class="flow" style="margin-top:16px">
         <div class="flow-row">
-          <div class="flow-cell problem"><span class="stage"><span class="ic"></span>Problem</span><span class="body">이메일 / 비밀번호 오류를 분리 응답하면 계정 열거 공격에 노출</span></div>
+          <div class="flow-cell problem"><span class="stage"><span class="ic"></span>Problem</span><span class="body">비밀번호 변경 시 빈 값·공백이 null 체크만 통과해 BCrypt 비교 단계까지 도달</span></div>
           <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="flow-cell solution"><span class="stage"><span class="ic"></span>Solution</span><span class="body"><code style="font-family:var(--mono);font-size:12px;background:var(--navy-950);padding:1px 6px;border-radius:4px;color:var(--amber-soft)">AUTHENTICATION_FAILED</code> 로 응답 통일</span></div>
+          <div class="flow-cell solution"><span class="stage"><span class="ic"></span>Solution</span><span class="body">BCrypt 호출 전 null·공백(<code style="font-family:var(--mono);font-size:12px;background:var(--navy-950);padding:1px 6px;border-radius:4px;color:var(--amber-soft)">trim().isEmpty()</code>) 가드 클로즈 추가, <code style="font-family:var(--mono);font-size:12px;background:var(--navy-950);padding:1px 6px;border-radius:4px;color:var(--amber-soft)">INVALID_CURRENT_PASSWORD</code> 예외로 즉시 차단</span></div>
           <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="flow-cell result"><span class="stage"><span class="ic"></span>Result</span><span class="body">계정 열거 공격 방어, 인증 응답 일관성 확보</span></div>
+          <div class="flow-cell result"><span class="stage"><span class="ic"></span>Result</span><span class="body">입력값 우회 가능성 제거, 불필요한 BCrypt 연산 차단</span></div>
         </div>
       </div>
       <div class="detail-list" style="margin-top:16px">
         <div class="detail-item">
           <div class="detail-head"><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 7v6c0 4.5 3.5 8 8 9 4.5-1 8-4.5 8-9V7z"/></svg></span><span class="d-title">상세 구현</span><span class="d-sub">JWT · Security · 캡슐화</span><span class="chev">▾</span></div>
           <div class="detail-body"><div class="detail-body-inner"><ul>
-            <li>JWT — DB 조회 없이 클레임 인증, 만료(<code>A003</code>) · 무효(<code>A002</code>) 분리, OncePerRequestFilter</li>
-            <li>Security — USER · ADMIN Enum, EntryPoint(401) · AccessDeniedHandler(403) 분리, @EnableMethodSecurity, 환경별 CORS yml</li>
-            <li>비밀번호 — 현재 비밀번호 검증 후 BCrypt 재암호화, 서비스 레벨 null/blank 선처리</li>
-            <li>예매 조회 — OrderStatus Enum 필터, Pageable 페이지네이션</li>
-            <li>도메인 캡슐화 — <code>order.validateOwner()</code> 분리</li>
-            <li>AI 협업 — Google Antigravity AI(User 도메인), Claude(아키텍처·ERD)</li>
+            <li>JWT — 세션·JWT+Refresh·JWT 단독 3방식 비교 후 AccessToken 단독(TTL 1시간) 제안·ADR 문서화</li>
+            <li>Security — EntryPoint(401)·AccessDeniedHandler(403) 분리 및 토큰 만료(<code>EXPIRED</code>)·위변조(<code>INVALID</code>) 에러코드 구분 설계</li>
+            <li>CORS — 와일드카드 없는 화이트리스트, <code>allowed-origins</code> 로컬·운영 환경별 yml 분리</li>
+            <li>유저 API — 내 정보 조회/수정, 예매내역 페이징(status 필터), 쿠폰 목록(정렬 3종) / 엔티티 Setter 금지, 비즈니스 메서드로만 상태 변경 강제</li>
+            <li>발표 — 팀 발표 스토리라인 설계 및 예상 질문 8문항 준비</li>
           </ul></div></div>
         </div>
       </div>
@@ -565,7 +630,7 @@ MessageListenerAdapter adapter(...) {
     <!-- 반려견 용품 이커머스 -->
     <div class="card proj-card" data-tilt>
       <div class="proj-badge">🐶 팀 프로젝트 · 육하은칙 팀 · 5인</div>
-      <h3 class="proj-title" style="font-size:clamp(24px,3vw,34px)">반려견 용품 이커머스</h3>
+      <h3 class="proj-title" style="font-size:clamp(24px,3vw,34px)">견생보감</h3>
       <p class="proj-oneliner">클라우드 기반 반려견 용품 구매 플랫폼 — <b style="color:var(--amber-soft)">주문 도메인 단독 구현</b></p>
       <div class="proj-meta">
         <div class="item"><div class="label">기간</div><div class="val">2026.03.16 – 03.27</div></div>
@@ -591,8 +656,17 @@ MessageListenerAdapter adapter(...) {
           <div class="flow-cell result"><span class="stage"><span class="ic"></span>Result</span><span class="body">결제 단계 도달 전 잘못된 주문 차단, 주문 확정·포인트 지급 흐름 일관성 유지</span></div>
         </div>
       </div>
-      <div class="stack-inline" style="margin-top:16px">
-        <span class="t">Java 17</span><span class="t">Spring Boot</span><span class="t">MySQL</span><span class="t">Redis</span><span class="t">GitHub Actions</span><span class="t">Caddy</span>
+      <div class="detail-list" style="margin-top:16px">
+        <div class="detail-item">
+          <div class="detail-head"><span class="d-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 7v6c0 4.5 3.5 8 8 9 4.5-1 8-4.5 8-9V7z"/></svg></span><span class="d-title">상세 구현</span><span class="d-sub">주문 · 동시성 · 설계</span><span class="chev">▾</span></div>
+          <div class="detail-body"><div class="detail-body-inner"><ul>
+            <li>다중 상품 주문을 단일 트랜잭션(<code>cascade=ALL</code>)으로 저장해 원자성 보장, 주문번호 UUID + DB UNIQUE 이중 중복 방지</li>
+            <li>포인트 사용액 검증(잔액 부족·최소 사용액)은 주문 생성 단계에서 수행, 차감·적립은 결제 확정 단계 포인트 도메인에 위임해 책임 경계 명확화</li>
+            <li>Payment row 락이 재고 동시성을 보장하지 못하는 사각지대를 코드 추적으로 확인 → Product row에 별도 비관적 락 추가</li>
+            <li>주문 상태 전이 가드 적용, 수동 확정과 스케줄러 자동 확정의 동시 처리 윈도우 식별 → Order row 비관적 락 보강</li>
+            <li><code>@EntityGraph</code>로 N+1 구조적 차단 / <code>findByIdAndUserId</code>로 소유권 검증을 쿼리 조건에 포함 / Bean Validation으로 입력 검증과 비즈니스 규칙 위반 계층적 분리</li>
+          </ul></div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -618,8 +692,14 @@ MessageListenerAdapter adapter(...) {
       <span class="b-date">2026.05</span><span class="b-title">Swagger(OpenAPI) 도입 및 API 문서화 적용</span>
       <span class="b-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
     </a>
-    <div class="blog-item"><span class="b-date">예정</span><span class="b-title">spring-data-redis PatternTopic 버그 분석</span><span class="b-state">작성 예정</span></div>
-    <div class="blog-item"><span class="b-date">예정</span><span class="b-title">Redis Pub/Sub vs Stream 비교</span><span class="b-state">작성 예정</span></div>
+    <a class="blog-item linked" href="https://aspiring-backend.tistory.com/19" target="_blank" rel="noopener">
+      <span class="b-date">2026.06</span><span class="b-title">Redis Pub/Sub 메시지가 사라졌다.. PatternTopic과 MessageListenerAdapter의 함정</span>
+      <span class="b-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+    </a>
+    <a class="blog-item linked" href="https://aspiring-backend.tistory.com/13" target="_blank" rel="noopener">
+      <span class="b-date">2026.05</span><span class="b-title">커피 주문 시스템 과제 TIL</span>
+      <span class="b-arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+    </a>
   </div>
 
   <div class="block">
@@ -689,6 +769,6 @@ MessageListenerAdapter adapter(...) {
   }
 })();
 </script>
-<script src="app.js?v=11"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>
