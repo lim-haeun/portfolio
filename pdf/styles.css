@@ -213,3 +213,39 @@ body{
     }
 
 }
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.info-table tr{
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.info-table th{
+
+    width:140px;
+
+    text-align:left;
+
+    padding:16px 0;
+
+    color:var(--accent);
+
+    font-size:15px;
+
+}
+
+.info-table td{
+
+    padding:16px 0;
+
+    line-height:1.8;
+
+}
