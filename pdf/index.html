@@ -282,6 +282,152 @@
     </div>
 
 </section>
+
+    <section class="page">
+
+    <div class="section-number">
+        03
+    </div>
+
+    <h2 class="section-title">
+        System Architecture
+    </h2>
+
+    <p class="section-subtitle">
+        Redis Pub/Sub 기반 실시간 채팅 시스템
+    </p>
+
+    <div class="card">
+
+        <h3>Request Flow</h3>
+
+        <div class="architecture">
+
+            <div class="arch-box">
+                Client
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                Spring Boot
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                WebSocket
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                Redis Pub/Sub
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                Connected Users
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Backend Architecture</h3>
+
+        <div class="architecture-grid">
+
+            <div class="architecture-item">
+
+                <h4>Application</h4>
+
+                <p>
+                    Spring Boot<br>
+                    Spring Security<br>
+                    JWT
+                </p>
+
+            </div>
+
+            <div class="architecture-item">
+
+                <h4>Database</h4>
+
+                <p>
+                    MySQL<br>
+                    JPA<br>
+                    QueryDSL
+                </p>
+
+            </div>
+
+            <div class="architecture-item">
+
+                <h4>Realtime</h4>
+
+                <p>
+                    WebSocket<br>
+                    STOMP<br>
+                    Redis Pub/Sub
+                </p>
+
+            </div>
+
+            <div class="architecture-item">
+
+                <h4>Infra</h4>
+
+                <p>
+                    Docker<br>
+                    AWS EC2<br>
+                    GitHub Actions
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Why Redis Pub/Sub?</h3>
+
+        <ul>
+
+            <li>멀티 서버 환경에서도 동일한 채팅 메시지를 전파</li>
+
+            <li>WebSocket 서버 간 메시지 동기화</li>
+
+            <li>확장 가능한 실시간 채팅 구조 구현</li>
+
+            <li>낮은 지연시간으로 실시간 사용자 경험 향상</li>
+
+        </ul>
+
+    </div>
+
+    <div class="footer">
+
+        <span>Architecture</span>
+
+        <span class="page-number">04</span>
+
+    </div>
+
+</section>
     
 </body>
 
