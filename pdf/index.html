@@ -826,6 +826,106 @@
     </div>
 
 </section>
+
+    <section class="page">
+
+    <div class="section-number">
+        06
+    </div>
+
+    <h2 class="section-title">
+        Trouble Shooting
+    </h2>
+
+    <p class="section-subtitle">
+        Redis Pub/Sub PatternTopic 문제 해결
+    </p>
+
+    <div class="card">
+
+        <h3>Situation</h3>
+
+        <p>
+            Redis Pub/Sub를 이용해 채팅 메시지를 여러 서버로 전달하는 기능을 구현했습니다.
+            처음에는 PatternTopic(chat:*)을 이용해 모든 채팅방을 구독하도록 설계했습니다.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Problem</h3>
+
+        <p>
+            MessageListenerAdapter를 사용할 경우,
+            실제 채널명이 아닌 Pattern(chat:*) 문자열만 전달되었습니다.
+        </p>
+
+        <p>
+            이로 인해 roomId를 추출할 수 없어
+            메시지를 올바른 채팅방으로 전달하지 못했습니다.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Analysis</h3>
+
+        <ul>
+
+            <li>Spring Data Redis 내부 동작 분석</li>
+
+            <li>PatternTopic의 callback 파라미터 확인</li>
+
+            <li>실제 channel 정보가 전달되지 않는 원인 파악</li>
+
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Solution</h3>
+
+        <ul>
+
+            <li>MessageListenerAdapter 제거</li>
+
+            <li>MessageListener 직접 구현</li>
+
+            <li>실제 channel(byte[])에서 roomId 추출</li>
+
+            <li>채팅방별 메시지 정상 브로드캐스트 구현</li>
+
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Result</h3>
+
+        <p>
+
+            PatternTopic 환경에서도
+            채널명을 정상적으로 식별할 수 있게 되었으며,
+            멀티 서버 환경에서 안정적으로
+            실시간 채팅을 처리할 수 있었습니다.
+
+        </p>
+
+    </div>
+
+    <div class="footer">
+
+        <span>Trouble Shooting</span>
+
+        <span class="page-number">07</span>
+
+    </div>
+
+</section>
     
 </body>
 
