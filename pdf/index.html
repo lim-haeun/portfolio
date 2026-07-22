@@ -12,12 +12,25 @@
     <section class="page cover-page" aria-label="커버">
       <div class="page-label">BACKEND PORTFOLIO</div>
       <div class="cover-grid">
-        <div>
-          <p class="eyebrow">Backend Engineer · Java / Spring Boot</p>
-          <h1>임하은</h1>
-          <p class="lead">
-            문제의 원인을 끝까지 분석하고, 구조와 성능을 함께 개선하는 백엔드 개발자입니다.
-          </p>
+        <div class="cover-intro">
+          <div>
+            <p class="eyebrow">Backend Engineer · Java / Spring Boot</p>
+            <h1>임하은</h1>
+            <p class="lead">
+              문제의 원인을 끝까지 분석하고, 구조와 성능을 함께 개선하는 백엔드 개발자입니다.
+            </p>
+          </div>
+          <div class="cover-summary">
+            <p>
+              호텔외식조리과를 전공하며 여러 팀 프로젝트와 요리대회 경험을 쌓았고,
+              코드가 실제로 동작하는 순간의 재미에 이끌려 백엔드 개발자로 전향했습니다.
+            </p>
+            <p>
+              실시간 시스템과 동시성 문제 해결에 관심이 많은 백엔드 개발자입니다.
+              Redis Pub/Sub 기반 채팅 시스템, Redisson 분산 락, 이벤트 기반 알림 시스템을 구현하며
+              문제의 원인을 분석하고 해결하는 과정에서 즐거움을 느낍니다.
+            </p>
+          </div>
           <div class="chip-row">
             <span class="chip">Java</span>
             <span class="chip">Spring Boot</span>
@@ -29,19 +42,28 @@
             <span class="chip">Docker</span>
           </div>
         </div>
-        <aside class="contact-card" aria-label="연락처">
-          <h2>Contact</h2>
-          <a href="mailto:limhaeun1028@gmail.com">limhaeun1028@gmail.com</a>
-          <a href="https://github.com/lim-haeun" target="_blank" rel="noopener">github.com/lim-haeun</a>
-          <a href="https://aspiring-backend.tistory.com/" target="_blank" rel="noopener">aspiring-backend.tistory.com</a>
-          <p class="muted">Java Backend Developer</p>
+        <aside class="profile-card" aria-label="연락처">
+          <div class="profile-card-head">
+            <span class="profile-role">Java Backend Developer</span>
+            <p class="profile-note">
+              문제 해결 중심의 백엔드 개발을 지향하며, 안정성과 효율성을 함께 고려하는 서비스를 만듭니다.
+            </p>
+          </div>
+          <div class="contact-list">
+            <a href="mailto:limhaeun1028@gmail.com">limhaeun1028@gmail.com</a>
+            <a href="https://github.com/lim-haeun" target="_blank" rel="noopener">github.com/lim-haeun</a>
+            <a href="https://aspiring-backend.tistory.com/" target="_blank" rel="noopener">aspiring-backend.tistory.com</a>
+          </div>
+          <div class="profile-footer">
+            <p class="muted">실시간 시스템, 동시성, 성능 최적화</p>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="page" aria-label="소개">
+    <section class="page about-page" aria-label="소개">
       <div class="page-label">01 / About Me</div>
-      <div class="section-grid">
+      <div class="about-grid">
         <article class="card">
           <h2>Introduce</h2>
           <p>
@@ -69,16 +91,22 @@
           </ul>
         </article>
       </div>
-      <div class="card quote-card">
+      <article class="card quote-card">
         “기능 구현에서 끝나지 않고, 원인을 분석하고 개선하는 개발자가 되고자 합니다.”
-      </div>
+      </article>
     </section>
 
-    <section class="page" aria-label="기술 스택">
+    <section class="page stack-page" aria-label="기술 스택">
       <div class="page-label">02 / Tech Stack</div>
       <div class="stack-grid">
-        <article class="card">
-          <h3>Backend</h3>
+        <article class="card stack-card">
+          <div class="stack-head">
+            <span class="stack-icon">☕</span>
+            <div>
+              <h3>Backend</h3>
+              <p>Java와 Spring Boot 기반의 백엔드 개발, RESTful API 설계 및 구현 경험이 있습니다.</p>
+            </div>
+          </div>
           <div class="chip-row">
             <span class="chip">Java 17</span>
             <span class="chip">Spring Boot</span>
@@ -87,23 +115,41 @@
             <span class="chip">QueryDSL</span>
           </div>
         </article>
-        <article class="card">
-          <h3>Database</h3>
+        <article class="card stack-card">
+          <div class="stack-head">
+            <span class="stack-icon">🗄️</span>
+            <div>
+              <h3>Database</h3>
+              <p>관계형 데이터 설계 및 최적화, Redis를 활용한 캐싱 및 데이터 관리 경험이 있습니다.</p>
+            </div>
+          </div>
           <div class="chip-row">
             <span class="chip">MySQL</span>
             <span class="chip">Redis</span>
           </div>
         </article>
-        <article class="card">
-          <h3>Infra</h3>
+        <article class="card stack-card">
+          <div class="stack-head">
+            <span class="stack-icon">☁️</span>
+            <div>
+              <h3>Infra</h3>
+              <p>Docker 기반 컨테이너 환경 구성, AWS 인프라 운영, CI/CD 자동화 경험이 있습니다.</p>
+            </div>
+          </div>
           <div class="chip-row">
             <span class="chip">Docker</span>
             <span class="chip">AWS</span>
             <span class="chip">GitHub Actions</span>
           </div>
         </article>
-        <article class="card">
-          <h3>Tools</h3>
+        <article class="card stack-card">
+          <div class="stack-head">
+            <span class="stack-icon">🛠️</span>
+            <div>
+              <h3>Tools</h3>
+              <p>협업과 프로젝트 관리를 위한 다양한 도구를 활용하며 효율적인 개발 프로세스를 경험했습니다.</p>
+            </div>
+          </div>
           <div class="chip-row">
             <span class="chip">Git</span>
             <span class="chip">GitHub</span>
@@ -113,8 +159,14 @@
           </div>
         </article>
       </div>
-      <div class="card">
-        <h3>Core Keywords</h3>
+      <article class="card keywords-card">
+        <div class="stack-head">
+          <span class="stack-icon">⭐</span>
+          <div>
+            <h3>Core Keywords</h3>
+            <p>문제 해결 중심의 개발을 지향하며, 성능과 구조를 함께 고려하는 백엔드 전문성을 갖추고 있습니다.</p>
+          </div>
+        </div>
         <div class="chip-row">
           <span class="chip">Problem Solving</span>
           <span class="chip">Backend</span>
@@ -124,10 +176,10 @@
           <span class="chip">Leadership</span>
           <span class="chip">Communication</span>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="page" aria-label="대표 프로젝트">
+    <section class="page project-page" aria-label="대표 프로젝트">
       <div class="page-label">03 / Main Project</div>
       <article class="card project-card">
         <div class="project-head">
@@ -167,9 +219,9 @@
       </article>
     </section>
 
-    <section class="page" aria-label="다른 프로젝트">
+    <section class="page other-page" aria-label="다른 프로젝트">
       <div class="page-label">04 / Other Projects</div>
-      <div class="section-grid">
+      <div class="project-grid">
         <article class="card">
           <h3>티켓을 JAVA라</h3>
           <p>
@@ -195,9 +247,9 @@
       </div>
     </section>
 
-    <section class="page" aria-label="블로그와 경험">
+    <section class="page blog-page" aria-label="블로그와 경험">
       <div class="page-label">05 / Blog & Experience</div>
-      <div class="section-grid">
+      <div class="project-grid">
         <article class="card">
           <h3>Tech Blog</h3>
           <ul class="list">
