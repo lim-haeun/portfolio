@@ -1,12 +1,12 @@
 :root {
-  --bg: #f8f6f1;
+  --bg: #f7f5f0;
   --surface: #ffffff;
-  --surface-2: #f7f6f2;
-  --border: #e2dbd3;
-  --text: #121212;
+  --surface-2: #f8f6f1;
+  --border: #e3dbd3;
+  --text: #111111;
   --muted: #6d6d6d;
   --accent: #111111;
-  --accent-soft: #f1f0eb;
+  --accent-soft: #f4f2ec;
   --shadow: 0 18px 40px rgba(17, 17, 17, 0.08);
 }
 
@@ -16,7 +16,6 @@
 
 html {
   font-size: 12px;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -45,7 +44,7 @@ a {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 18mm 20mm 16mm;
-  margin: 0 auto 12px;
+  margin: 0 auto 14px;
   box-shadow: var(--shadow);
   break-after: page;
   page-break-after: always;
@@ -67,15 +66,14 @@ a {
 
 .cover-grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.9fr;
-  gap: 18px;
-  align-items: start;
+  grid-template-columns: 1.28fr 0.88fr;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-.cover-intro {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.cover-main {
+  display: grid;
+  gap: 20px;
 }
 
 .eyebrow {
@@ -112,20 +110,21 @@ h3 {
 
 .lead {
   font-size: 18px;
-  color: #2e2e2e;
-  line-height: 1.7;
+  color: #252525;
+  line-height: 1.75;
 }
 
 .cover-summary p {
-  margin-bottom: 12px;
-  color: #3b3b3b;
+  margin-top: 6px;
+  color: #3c3c3c;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .chip-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 8px;
 }
 
 .chip {
@@ -144,17 +143,15 @@ h3 {
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 210px;
+  padding: 24px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 230px;
 }
 
 .profile-card-head {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  gap: 12px;
 }
 
 .profile-role {
@@ -168,30 +165,36 @@ h3 {
 .profile-note {
   font-size: 13px;
   color: #424242;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .contact-list {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .contact-list a {
   color: var(--text);
   font-size: 13px;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .profile-footer {
-  padding-top: 8px;
+  padding-top: 10px;
   border-top: 1px solid var(--border);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .about-grid,
 .stack-grid,
-.project-grid {
+.project-grid,
+.section-grid {
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .about-grid {
@@ -202,26 +205,33 @@ h3 {
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 22px;
+  padding: 24px;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
+.card-heading {
+  margin-bottom: 16px;
+}
+
 .stack-card,
-.keywords-card {
+.keywords-card,
+.project-mini,
+.contact-panel {
   min-height: 180px;
 }
 
-.stack-head {
+.stack-card-head {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: flex-start;
+  margin-bottom: 18px;
 }
 
 .stack-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -233,10 +243,11 @@ h3 {
 .keywords-card p,
 .cover-summary p,
 .profile-note,
-.contact-panel p {
+.contact-panel p,
+.project-mini p {
   margin: 0;
-  color: #474747;
-  line-height: 1.7;
+  gap: 18px;
+  line-height: 1.8;
 }
 
 .keywords-card {
@@ -246,22 +257,26 @@ h3 {
 .quote-card {
   text-align: center;
   font-weight: 700;
-  color: #232323;
+  color: #202020;
   font-size: 18px;
+  padding: 26px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--border);
 }
 
 .list {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 20px;
   color: #2f2f2f;
 }
 
 .list li + li {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .project-card {
-  padding: 24px 26px;
+  padding: 26px;
 }
 
 .project-head {
@@ -269,7 +284,7 @@ h3 {
   grid-template-columns: 1fr auto;
   gap: 18px;
   align-items: start;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .pill {
@@ -285,10 +300,10 @@ h3 {
 }
 
 .subtitle {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-size: 15px;
   color: #333333;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .meta-grid {
@@ -302,7 +317,7 @@ h3 {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 12px 14px;
+  padding: 14px 15px;
 }
 
 .meta-grid span {
@@ -318,20 +333,33 @@ h3 {
   display: block;
   color: var(--text);
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.section-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.project-mini-head {
+  margin-bottom: 16px;
+}
+
+.project-mini {
+  min-height: 220px;
+}
+
+.project-mini p {
+  margin-top: 8px;
 }
 
 .contact-panel {
   display: flex;
   flex-direction: column;
-  gap: 18x;
-  padding: 26px 28px;
+  gap: 16px;
+  padding: 28px;
 }
 
 .contact-panel h2 {
@@ -347,7 +375,18 @@ h3 {
 .contact-links a {
   color: var(--text);
   font-size: 13px;
-  word-break: break-all;
+  word-break: break-word;
+}
+
+.experience-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-intro {
+  margin: 0 0 18px;
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 @page {
@@ -376,7 +415,8 @@ h3 {
   .about-grid,
   .stack-grid,
   .project-grid,
-  .section-grid {
+  .section-grid,
+  .experience-grid {
     grid-template-columns: 1fr;
   }
 
