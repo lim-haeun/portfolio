@@ -709,6 +709,123 @@
     </div>
 
 </section>
+
+    <section class="page">
+
+    <div class="section-number">
+        05
+    </div>
+
+    <h2 class="section-title">
+        Performance Optimization
+    </h2>
+
+    <p class="section-subtitle">
+        메시지 조회 성능 개선
+    </p>
+
+    <div class="card">
+
+        <h3>Problem</h3>
+
+        <p>
+            채팅방의 메시지가 증가하면서 이전 메시지를 조회하는 API의 응답 속도가 점차 느려졌습니다.
+            실행 계획(EXPLAIN)을 분석한 결과 불필요한 레코드 탐색이 발생하고 있었습니다.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Solution</h3>
+
+        <ul>
+
+            <li>EXPLAIN으로 실행 계획 분석</li>
+
+            <li>chat_room_id + id 복합 인덱스 적용</li>
+
+            <li>커서 기반 페이지네이션 적용</li>
+
+            <li>불필요한 Full Scan 제거</li>
+
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Result</h3>
+
+        <table class="compare-table">
+
+            <tr>
+
+                <th></th>
+
+                <th>Before</th>
+
+                <th>After</th>
+
+            </tr>
+
+            <tr>
+
+                <td>조회 레코드</td>
+
+                <td>395 rows</td>
+
+                <td>20 rows</td>
+
+            </tr>
+
+            <tr>
+
+                <td>응답 시간</td>
+
+                <td>10.4 ~ 15.1 ms</td>
+
+                <td>0.06 ~ 0.09 ms</td>
+
+            </tr>
+
+            <tr>
+
+                <td>조회 방식</td>
+
+                <td>비효율적 탐색</td>
+
+                <td>복합 인덱스 활용</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card">
+
+        <h3>What I Learned</h3>
+
+        <p>
+
+            단순히 기능을 구현하는 것에서 끝나는 것이 아니라,
+            실행 계획을 분석하고 데이터 접근 방식을 개선하는 과정이
+            백엔드 성능 최적화에서 중요하다는 것을 경험했습니다.
+
+        </p>
+
+    </div>
+
+    <div class="footer">
+
+        <span>Performance Optimization</span>
+
+        <span class="page-number">06</span>
+
+    </div>
+
+</section>
     
 </body>
 
